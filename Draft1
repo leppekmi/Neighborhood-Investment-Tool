@@ -1,0 +1,17 @@
+##Name:
+##Description:
+##Authors:
+
+## We should make lots of notes in our code!
+
+##import system modules
+import arcpy
+from arcpy import env
+
+##Set environment workspace (I'm assuming we'll need to change this eventually for it to work as a toolbox)
+env.workspace = r"XXX"
+
+##Set local variables maybe??-
+
+##Execute AddField to add a new field
+arcpy.AddField_management()
