@@ -16,11 +16,18 @@ from arcpy import env
 env.workspace = r"XXX"
 
 ##Set local variables #1 (Add Field)
-AreaInput = arcpy.GetParametersAsText(0)
+AreaInput = arcpy.GetParametersAsText(1)
 FieldName = "Count"
 
 ##Execute AddField to add a new field
-arcpy.AddField_management(AreaInput, Count, "SHORT")
+arcpy.AddField_management(AreaInput, FieldName, "SHORT")
 
-##Set local variables #2
+##Set local variables #2 (Field Calculator)
+AreaInput = arcpy.GetParametersAsText(1)
+FieldName = "Count"
+
+##Execute CalculateField to provide a 1:1 Count for each Point
+arcpy.CalculateField_management(AreaInput, FieldName, "1")
+
+##Set local variables #3
 InvestmentInput = arcpy.GetParametersAsText(1)
