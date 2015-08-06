@@ -1,4 +1,4 @@
-##Name:
+##Name:Neighborhood Investment
 ##Description:
 ##Authors: Hilary Ahearn & Michelle Leppek
 
@@ -15,7 +15,12 @@ from arcpy import env
 ##Set environment workspace (I'm assuming we'll need to change this eventually for it to work as a toolbox)
 env.workspace = r"XXX"
 
-##Set local variables maybe??-
+##Set local variables #1 (Add Field)
+AreaInput = arcpy.GetParametersAsText(0)
+FieldName = "Count"
 
 ##Execute AddField to add a new field
-arcpy.AddField_management()
+arcpy.AddField_management(AreaInput, Count, "SHORT")
+
+##Set local variables #2
+InvestmentInput = arcpy.GetParametersAsText(1)
