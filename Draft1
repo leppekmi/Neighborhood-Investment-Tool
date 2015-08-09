@@ -19,7 +19,7 @@ FieldName = "Count"
 arcpy.AddField_management(AreaInput, FieldName, "SHORT")
 
 ##Set local variables #2 (Field Calculator)
-AreaInput = arcpy.GetParametersAsText(1)
+AreaInput = arcpy.GetParametersAsText(0)
 FieldName = "Count"
 
 ##Execute CalculateField to provide a 1:1 Count for each Point
