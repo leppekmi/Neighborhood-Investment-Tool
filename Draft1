@@ -3,12 +3,7 @@
 ##Authors: Hilary Ahearn & Michelle Leppek
 
 ## We should make lots of notes in our code!
-
-## Look...I can write a note in here!-Hilary
-
-## Again!
-
-## This is to practice a pull request...
+##Pull Request Test
 
 ##import system modules
 import arcpy
@@ -39,4 +34,3 @@ FieldName = "Count"
 
 ## Execute SpatialJoin_analysis to determine the number of points in each neighborhood
 arcpy.SpatialJoin_analysis(AreaInput, InvestmentInput, Output)
-
