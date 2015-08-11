@@ -23,8 +23,17 @@ arcpy.CalculateField_management(InvestmentInput, FieldName, "1")
 ##Set local variables #3
 AreaInput = arcpy.GetParameterAsText(0)
 InvestmentInput = arcpy.GetParameterAsText(1)
-Output = arcpy.GetParameterAsText(2)
+Output = arcpy.GetParameterAsText(5)
 FieldName = "Count"
+UseAll = arcpy.GetParameterAsText(2)
+InputField = arcpy.GetParameterAsText(3)
+InputValue = arcpy.GetParameterAsText(4)
 
+arcpy.SetParameter(5,InputValue)
+
+if UseAll.lower() == "true":
 ## Execute SpatialJoin_analysis to determine the number of points in each neighborhood
-arcpy.SpatialJoin_analysis(AreaInput, InvestmentInput, Output)
+  arcpy.SpatialJoin_analysis(AreaInput, InvestmentInput, Output)
+
+else:
+  select 
