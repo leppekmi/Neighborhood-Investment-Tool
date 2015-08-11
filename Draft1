@@ -28,6 +28,7 @@ FieldName = "Count"
 UseAll = arcpy.GetParameterAsText(2)
 InputField = arcpy.GetParameterAsText(3)
 InputValue = arcpy.GetParameterAsText(4)
+cursor = arcpy.SearchCursor(InvestmentInput)
 
 arcpy.SetParameter(5,InputValue)
 
@@ -36,4 +37,4 @@ if UseAll.lower() == "true":
   arcpy.SpatialJoin_analysis(AreaInput, InvestmentInput, Output)
 
 else:
-  select 
+  for row in cursor 
