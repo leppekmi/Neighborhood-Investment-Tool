@@ -28,7 +28,7 @@ FieldName = "Count"
 UseAll = arcpy.GetParameterAsText(2)
 InputField = arcpy.GetParameterAsText(3)
 InputValue = arcpy.GetParameterAsText(4)
-cursor = arcpy.SearchCursor(InvestmentInput)
+cursor = arcpy.da.SearchCursor(InvestmentInput, InputField)
 
 arcpy.SetParameter(5,InputValue)
 
