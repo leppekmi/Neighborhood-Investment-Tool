@@ -2,15 +2,9 @@
 ##Description:
 ##Authors: Hilary Ahearn & Michelle Leppek
 
-## We should make lots of notes in our code!
-##Pull Request Test
-
 ##import system modules
 import arcpy
 from arcpy import env
-
-##Set environment workspace (I'm assuming we'll need to change this eventually for it to work as a toolbox)
-env.workspace = r"XXX"
 
 ##Set local variables #1 (Add Field)
 InvestmentInput = arcpy.GetParametersAsText(1)
@@ -20,16 +14,16 @@ FieldName = "Count"
 arcpy.AddField_management(InvestmentInput, FieldName, "SHORT")
 
 ##Set local variables #2 (Field Calculator)
-InvestmentInput = arcpy.GetParametersAsText(1)
+InvestmentInput = arcpy.GetParameterAsText(1)
 FieldName = "Count"
 
 ##Execute CalculateField to provide a 1:1 Count for each Point
 arcpy.CalculateField_management(InvestmentInput, FieldName, "1")
 
 ##Set local variables #3
-AreaInput = arcpy.GetParametersAsText(0)
-InvestmentInput = arcpy.GetParametersAsText(1)
-Output = arcpy.GetParametersAsText(2)
+AreaInput = arcpy.GetParameterAsText(0)
+InvestmentInput = arcpy.GetParameterAsText(1)
+Output = arcpy.GetParameterAsText(2)
 FieldName = "Count"
 
 ## Execute SpatialJoin_analysis to determine the number of points in each neighborhood
