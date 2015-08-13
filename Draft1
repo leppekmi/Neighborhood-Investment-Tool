@@ -38,3 +38,5 @@ if UseAll.lower() == "true":
 
 else:
   for row in cursor 
+  
+  ## Add Try/Except Statement for extension checking?
